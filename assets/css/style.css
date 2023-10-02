@@ -9,3 +9,44 @@ body {
     );
 }
 
+.debug {
+  border: 1px solid black;
+  background-color:rgba(230, 225, 225, 0.5);
+}
+
+.container_sp {
+  width: 75%;
+  margin: 20px auto;
+  height: 100%;
+}
+
+aside {
+  width: 35%;
+  height: 100%;
+}
+
+aside .top {
+  width: 100%;
+  height: 100px; 
+}
+
+aside .bottom {
+  height: calc(100% - 100px);
+  overflow-y: scroll;
+}
+
+section.text  {
+  width: 75%;
+  height: 100%;
+}
+
+section.text .top,
+section.text .bottom {
+  width: 100%;
+  height: 50px;
+}
+
+section.text .center {
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+}
