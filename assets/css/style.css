@@ -78,6 +78,7 @@ aside .bottom {
 section.text  {
   width: 60%;
   height: 100%;
+  background-image: url(../img/mine.jpg);
 }
 
 section.text .top,
@@ -94,6 +95,11 @@ section.text .top {
 section.text .center {
   height: calc(100vh - 100px);
   overflow-y: scroll;
+}
+
+section.text .bottom,
+section.text .bottom button {
+  background-color: var(--bottom-color);
 }
 
 
@@ -149,5 +155,7 @@ aside .top .notifications button.icon {
   }
 
 
-
   /* section text elements */
+
+
+  
