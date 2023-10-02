@@ -9,9 +9,12 @@ body {
 }
 
 
-
 li:hover {
   background-color: var(--hover);
+}
+
+.avatar img {
+  border-radius: 50%;
 }
 
 
@@ -83,6 +86,11 @@ section.text .bottom {
   height: 50px;
 }
 
+
+section.text .top {
+  background-color: var(--top-color);
+}
+
 section.text .center {
   height: calc(100vh - 100px);
   overflow-y: scroll;
@@ -110,10 +118,6 @@ aside .top .search-chat {
 aside .top .avatar-icons .avatar {
   width: 50px;
   height: 100%;
-}
-
-aside .top .avatar-icons .avatar img {
-  border-radius: 50%;
 }
 
 aside .top .avatar-icons .icons {
@@ -144,6 +148,6 @@ aside .top .notifications button.icon {
     height: 60px;
   }
 
-  aside .bottom .avatar-text .avatar img {
-    border-radius: 50%;
-  }
+
+
+  /* section text elements */
