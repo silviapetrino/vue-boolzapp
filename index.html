@@ -16,13 +16,13 @@
 
    <!-- aside  -->
 <aside class="d-flex flex-column">
-  <div class="top ">
-
+          <!-- aside-top  -->
+  <div class="top">
 
     <div class="avatar-icons d-flex align-items-center py-1">
 
       <div class="avatar">
-        <img class="w-100 h-100 object-fit-cover img-fluid" src="./assets/img/avatar_io.jpg" alt="me">
+        <img class="w-100 h-100 object-fit-cover img-fluid cp" src="./assets/img/avatar_io.jpg" alt="me">
       </div>
       <span class="my-name px-1 m-size">Sofia</span>
       
@@ -34,12 +34,57 @@
     </div>
 
 
-    <div class="notifications">notifications</div>
-    <div class="search-chat debug">nuova chat</div>
+    <div class="notifications d-flex align-items-center ">
+      <button class="icon ms-3 border-bottom-0">
+        <i class="fa-solid fa-bell-slash"></i>
+      </button>
+      <div class="text m-size px-2 d-flex flex-column">
+        <span>Ricevi notifiche di nuovi messaggi</span>
+        <a class="i-color sm-size" href="">Attiva notifiche desktop</a>
+      </div>
+    </div>
+
+      <div class="search-chat">
+        <div class="input-group rounded p-1">
+          <span class="input-group-text border-0 cp" id="search-addon">
+            <i class="fas fa-search"></i>
+          </span>
+          <input type="search" class="form-control rounded sm-size" placeholder="Cerca o inizia nuova chat" aria-label="Search" aria-describedby="search-addon" />
+        </div>
+      </div>
+    </div>
+
 
   </div>
-  <div class="bottom">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, eligendi! Voluptate molestias recusandae iusto sed eligendi saepe, cum, ut esse dicta repellat aut impedit sit! Maiores alias ullam voluptates minima assumenda, facere voluptatem voluptate optio corrupti officia dolor quidem animi, ut aspernatur consequatur libero amet earum quibusdam odit eum impedit non repellendus cumque repudiandae! Numquam optio velit fugit repellat error minus voluptate temporibus officiis! Beatae dicta distinctio vel officiis nemo cupiditate quia aliquam consequatur ducimus eos ipsum illum, quae, deleniti dolor numquam esse molest</div>
+
+    <!-- /aside-top  -->
+       <!-- aside-bottom  -->
+
+  <div class="bottom mt-2">
+
+    <ul class="d-flex justify-content-between align-items-center list-unstyled">
+
+      <li class="d-flex justify-content-between w-100 p-2">
+
+        <div class="avatar-text d-flex h-100 w-100">
+          <div class="avatar h-100">
+           <img class="img-fluid w-100 h-100 object-fit-cover" src="./assets/img/avatar_1.jpg" alt="avatar">
+          </div>
+
+          <div class="name-mess d-flex flex-column justify-content-center ps-1">
+            <span class="name m-size">Michele</span>
+            <span class="last-msg sm-size i-color">Ultimo messaggio inviato</span>
+          </div>
+        </div>
+        
+        <span class="ms-size">12:00</span>
+      </li>
+
+    </ul>
+
+  </div>
 </aside>
+        <!-- /aside-bottom  -->
 
    <!-- /aside  -->
 
