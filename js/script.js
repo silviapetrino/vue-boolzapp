@@ -221,10 +221,12 @@
           
       },
 
-      
       stop() {
         clearInterval(this.interval); 
       },
+
+      
+
 
     },
     
