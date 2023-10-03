@@ -121,8 +121,8 @@
 
     <span class="time d-inline-block sm-size align-self-end">{{msgs.date}}</span>
   </div>
-  <div v-show="" class="msg-sent">{{newMessage}}</div>
-  <div v-show="" class="msg-received">{{messageOutput}}</div>
+  <div v-show v-if="sendMessage" class="align-self-end">{{newMessage}}</div>
+  <div v-else="automaticAnswer" class="msg-received align-self-start"></div>
   
   
   
