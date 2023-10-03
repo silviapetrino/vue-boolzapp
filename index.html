@@ -113,13 +113,18 @@
 
   </div>
 
-  <div v-for="(msgs, index) in contacts[currentContact].messages" :class="(msgs.status === 'sent') ? 'msg-sent align-self-end' : 'msg-received align-self-start'" class="center d-flex flex-column m-size">
+<div class="overflow-scroll center d-flex flex-column m-size">
+
+  <div v-for="(msgs, index) in contacts[currentContact].messages" :class="(msgs.status === 'sent') ? 'msg-sent align-self-end' : 'msg-received align-self-start'" class="">
 
     <div class="text">{{ msgs.message }}</div>
-    <span class="data">time</span>
-   
+
+    <span class="data py-2 sm-size">{{clock}}</span>
     
   </div>
+
+</div>
+ 
 
 
   <div class="bottom d-flex py-2">

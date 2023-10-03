@@ -1,11 +1,13 @@
 
-  const { createApp } = Vue
+ const dt = luxon.DateTime;
+ 
+ const { createApp } = Vue
 
   createApp({
     data() {
       return {
         currentContact: 0,
-
+        clock: " ",
         contacts: [
           {
               name: 'Michele',
@@ -184,17 +186,22 @@
         this.currentContact = index;
     },
 
+      printTime() {
+        this.clock = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
+        console.log(this.clock);
+      }
+
     
     },
     
   
 
   
-  mounted(){
-    
-  
+    mounted(){
+      
+      clock = this.printTime()
 
-  },
+    },
 
 
   }).mount('#app')
