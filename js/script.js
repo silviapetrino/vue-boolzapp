@@ -196,7 +196,7 @@
       sendMessage() {
 
         this.contacts[this.currentContact].messages.push({
-          date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+          date: this.clock,
           message: this.newMessage,
           status: 'sent'
         });
@@ -214,8 +214,6 @@
     mounted(){
       
       clock = this.printTime()
-
-    //   console.log(this.contacts[1].messages[1].message)
 
     },
 

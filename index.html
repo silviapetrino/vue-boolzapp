@@ -115,13 +115,17 @@
 
 <div class="overflow-scroll center d-flex flex-column m-size">
 
-  <div v-for="(msgs, index) in contacts[currentContact].messages" :class="(msgs.status === 'sent') ? 'msg-sent align-self-end' : 'msg-received align-self-start'" class="d-flex flex-column ">
+  <div  v-for="(msgs, index) in contacts[currentContact].messages" :class="(msgs.status === 'sent') ? 'msg-sent align-self-end' : 'msg-received align-self-start'" class="d-flex flex-column ">
 
     <div class="text">{{ msgs.message }}</div>
 
     <span class="time d-inline-block sm-size align-self-end">{{msgs.date}}</span>
-
   </div>
+  <div v-show="" class="msg-sent">{{newMessage}}</div>
+  <div v-show="" class="msg-received">{{messageOutput}}</div>
+  
+  
+  
 
 </div>
  
@@ -131,7 +135,7 @@
     <button class="i-color border-0 px-4">
       <i class="fa-regular fa-face-smile"></i>
     </button>
-    <input type="text" class="form-control rounded sm-size" placeholder="Cerca o inizia nuova chat" aria-describedby="search-addon" />
+    <input v-model.trim="newMessage" @keyup.enter="sendMessage" type="text" class="form-control rounded sm-size" placeholder="Cerca o inizia nuova chat" aria-describedby="search-addon" />
     <button class="i-color border-0 px-4">
       <i class="fa-solid fa-microphone"></i>
     </button>
