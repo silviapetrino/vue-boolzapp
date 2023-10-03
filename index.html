@@ -46,11 +46,11 @@
     </div>
 
       <div class="search-chat">
-        <div class="input-group rounded p-1">
+        <div class="input-group p-1 bg-gray">
           <span class="input-group-text border-0 cp" id="search-addon">
             <i class="fas fa-search"></i>
           </span>
-          <input type="search" class="form-control rounded sm-size" placeholder="Cerca o inizia nuova chat" aria-label="Search" aria-describedby="search-addon" />
+          <input type="search" class="form-control sm-size " placeholder="Cerca o inizia nuova chat" aria-label="Search" aria-describedby="search-addon" />
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
 
     <ul  v-for="(contact, index) in contacts" class="d-flex justify-content-between align-items-center list-unstyled">
 
-      <li class="d-flex justify-content-between w-100 p-2 cp">
+      <li @click="showContact(index)" :class="{ active: index === currentContact }" class="d-flex justify-content-between w-100 cp px-1">
 
         <div class="avatar-text d-flex h-100 w-100">
           <div class="avatar h-100">
@@ -73,7 +73,7 @@
 
           <div class="name-mess d-flex flex-column justify-content-center ps-1">
             <span class="name m-size">{{contacts[index].name}}</span>
-            <span class="last-msg sm-size i-color">Ultimo messaggio inviato</span>
+            <span class="last-msg sm-size i-color">ultimo mess inviato</span>
           </div>
         </div>
         
@@ -90,15 +90,16 @@
 
 
 <section class="text d-flex flex-column justify-content-between ">
-  <div class="top p-1 d-flex justify-content-between align-items-center ">
+
+  <div  class="top p-1 d-flex justify-content-between align-items-center ">
 
     <div class="avatar-text d-flex h-100">
       <div class="avatar h-100">
-       <img class="img-fluid w-100 h-100 object-fit-cover" src="./assets/img/avatar_1.jpg" alt="avatar">
+       <img class="img-fluid w-100 h-100 object-fit-cover" :src="contacts[currentContact].avatar" alt="avatar">
       </div>
 
       <div class="name-mess d-flex flex-column justify-content-center ps-1">
-        <span class="name m-size">nome</span>
+        <span class="name m-size">{{contacts[currentContact].name}}</span>
         <span class="last-access sm-size i-color">Ultimo accesso oggi alle 12:00</span>
       </div>
     </div>
@@ -111,10 +112,12 @@
 
   </div>
 
-  <div class="center d-flex flex-column px-5 py-1">
+  <div v-for="(msgs, index) in contacts[currentContact].messages" :class="(msgs.status === 'sent') ? 'msg-sent align-self-end' : 'msg-received align-self-start'" class="center d-flex flex-column m-size">
 
-    <div class="msg-sent align-self-end">uno</div>
-    <div class="msg-received align-self-start">due</div>
+    <div class="text">{{ msgs.message}}</div>
+    <span class="data">time</span>
+   
+    
   </div>
 
 

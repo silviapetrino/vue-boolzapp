@@ -4,6 +4,8 @@
   createApp({
     data() {
       return {
+        currentContact: 0,
+
         contacts: [
           {
               name: 'Michele',
@@ -166,18 +168,33 @@
                   }
               ],
           }
-      ]
+      ],
+      
       
           
-
-
-        
       }
+
     },
 
   
-  mounted(){
-    console.log(this.contacts[0].name)
+    methods: {
+      // change the active contact 
 
-  }
+      showContact(index) {
+        this.currentContact = index;
+    },
+
+    
+    },
+    
+  
+
+  
+  mounted(){
+    
+  
+
+  },
+
+
   }).mount('#app')

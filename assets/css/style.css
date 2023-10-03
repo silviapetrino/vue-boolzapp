@@ -9,7 +9,8 @@ body {
 }
 
 
-li:hover {
+li:hover,
+li.active {
   background-color: var(--hover);
 }
 
@@ -46,6 +47,10 @@ li:hover {
 .debug {
   border: 1px solid black;
   background-color:rgba(230, 225, 225, 0.5);
+}
+
+.bg-gray {
+  background-color:rgba(230, 225, 225, 1);
 }
 
 
@@ -157,12 +162,12 @@ aside .top .notifications button.icon {
 
   /* section text elements */
 
-
-  .msg-sent,
-  .msg-received {
-    padding: 3px;
+  section.text .msg-sent,
+  section.text .msg-received {
     border-radius: 5px;
-    width: 40%;
+    width: 60%;
+    height: 10%;
+    padding: 8px;
   }
 
   .msg-sent {
