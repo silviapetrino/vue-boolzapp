@@ -8,7 +8,6 @@
       return {
         currentContact: 0,
         newMessage: " ",
-        messageOutput: " ",
         clock: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
         contacts: [
           {
@@ -198,10 +197,18 @@
           status: 'sent'
         });
         this.newMessage = " "; 
+        this.automaticAnswer()
+      },
 
+      automaticAnswer() {
+        this.contacts[this.currentContact].messages.push({
+            date: this.clock,
+            message: 'ok',
+            status: 'received',
+          });
+          
       }
 
-    
 
     },
     
@@ -209,6 +216,7 @@
 
   
     mounted(){
+
 
 
     },
