@@ -9,7 +9,7 @@
         currentContact: 0,
         newMessage: " ",
         messageOutput: " ",
-        clock: " ",
+        clock: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
         contacts: [
           {
               name: 'Michele',
@@ -188,10 +188,7 @@
         this.currentContact = index;
         },
 
-      printTime() {
-        this.clock = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
-        console.log(this.clock);
-      },
+     
 
       sendMessage() {
 
@@ -212,8 +209,7 @@
 
   
     mounted(){
-      
-      clock = this.printTime()
+
 
     },
 
