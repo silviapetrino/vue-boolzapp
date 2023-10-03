@@ -115,12 +115,12 @@
 
 <div class="overflow-scroll center d-flex flex-column m-size">
 
-  <div v-for="(msgs, index) in contacts[currentContact].messages" :class="(msgs.status === 'sent') ? 'msg-sent align-self-end' : 'msg-received align-self-start'" class="">
+  <div v-for="(msgs, index) in contacts[currentContact].messages" :class="(msgs.status === 'sent') ? 'msg-sent align-self-end' : 'msg-received align-self-start'" class="d-flex flex-column ">
 
     <div class="text">{{ msgs.message }}</div>
 
-    <span class="data py-2 sm-size">{{clock}}</span>
-    
+    <span class="time d-inline-block sm-size align-self-end">{{clock}}</span>
+
   </div>
 
 </div>
