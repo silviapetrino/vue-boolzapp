@@ -13,6 +13,7 @@
         newMessage: " ",
         answer: "Ok",
         clock: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+        interval: null,
         contacts: [
           {
               name: 'Michele',
@@ -201,11 +202,12 @@
           status: 'sent'
         });
         this.newMessage = " "; 
-
-        setInterval( () => {
+  
+        this.interval = setInterval( () => {
             this.automaticAnswer()
         }, 1000)
-        
+
+
       },
 
     //   Adds a new "received" type message to the active contact with the text of the automatic response "Ok".
@@ -217,12 +219,16 @@
             status: 'received',
           });
           
-      }
+      },
 
+      
+      stop() {
+        clearInterval(this.interval); 
+      },
 
     },
     
-  
+ 
 
 
 
