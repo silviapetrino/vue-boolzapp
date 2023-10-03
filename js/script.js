@@ -201,7 +201,11 @@
           status: 'sent'
         });
         this.newMessage = " "; 
-        this.automaticAnswer()
+
+        setInterval( () => {
+            this.automaticAnswer()
+        }, 2000)
+        
       },
 
     //   Adds a new "received" type message to the active contact with the text of the automatic response "Ok".
