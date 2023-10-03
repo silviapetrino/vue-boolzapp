@@ -6,7 +6,10 @@
   createApp({
     data() {
       return {
+
+        //  index of the currently active contact.
         currentContact: 0,
+
         newMessage: " ",
         answer: "Ok",
         clock: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
@@ -182,13 +185,14 @@
 
   
     methods: {
-      // change the active contact 
+
+    //  Changes the active contact based on the index passed as an argument
 
       showContact(index) {
         this.currentContact = index;
         },
 
-     
+    // Adds a new sent type message to the active contact
 
       sendMessage() {
         this.contacts[this.currentContact].messages.push({
@@ -199,6 +203,8 @@
         this.newMessage = " "; 
         this.automaticAnswer()
       },
+
+    //   Adds a new "received" type message to the active contact with the text of the automatic response "Ok".
 
       automaticAnswer() {
         this.contacts[this.currentContact].messages.push({
@@ -214,12 +220,6 @@
     
   
 
-  
-    mounted(){
-
-
-
-    },
 
 
   }).mount('#app')
