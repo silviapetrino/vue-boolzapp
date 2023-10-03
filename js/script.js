@@ -204,7 +204,7 @@
 
         setInterval( () => {
             this.automaticAnswer()
-        }, 2000)
+        }, 1000)
         
       },
 
