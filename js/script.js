@@ -7,6 +7,8 @@
     data() {
       return {
         currentContact: 0,
+        newMessage: " ",
+        messageOutput: " ",
         clock: " ",
         contacts: [
           {
@@ -184,14 +186,26 @@
 
       showContact(index) {
         this.currentContact = index;
-    },
+        },
 
       printTime() {
         this.clock = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
         console.log(this.clock);
+      },
+
+      sendMessage() {
+
+        this.contacts[this.currentContact].messages.push({
+          date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+          message: this.newMessage,
+          status: 'sent'
+        });
+        this.newMessage = " "; 
+
       }
 
     
+
     },
     
   
@@ -200,6 +214,8 @@
     mounted(){
       
       clock = this.printTime()
+
+    //   console.log(this.contacts[1].messages[1].message)
 
     },
 
