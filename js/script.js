@@ -224,22 +224,19 @@
           
       },
 
+      search() {
+        this.contacts.forEach(contact => {
+          contact.visible = contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
+        });
+    
+        return this.contacts.filter(contact => contact.visible);
+      }
 
-  
 
 
     },
 
-    computed: {
 
-            search() {
-              this.contacts.forEach(contact => {
-                contact.visible = contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
-              });
-          
-              return this.contacts.filter(contact => contact.visible);
-            }
-          }
           
           
 
