@@ -63,7 +63,7 @@
 
   <div class="bottom mt-2">
 
-    <ul  v-for="(contact, index) in filteredContacts" :key="index" class="d-flex justify-content-between align-items-center list-unstyled">
+    <ul  v-for="(contact, index) in filteredContacts" class="d-flex justify-content-between align-items-center list-unstyled">
 
       <li @click="showContact(index)" :class="{ active: index === currentContact }" class="d-flex justify-content-between w-100 cp p-1">
 
