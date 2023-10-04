@@ -9,7 +9,7 @@
 
         //  index of the currently active contact.
         currentContact: 0,
-
+        searchContact: null,
         newMessage: " ",
         answer: "Ok",
         clock: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
@@ -177,12 +177,24 @@
               ],
           }
       ],
-      
-      
+         
           
       }
 
     },
+
+    computed: {
+        filteredContacts() {
+          if (!this.searchContact) {
+            return this.contacts;
+          }
+    
+          const searchedName = this.searchContact.toLowerCase();
+          return this.contacts.filter(contact =>
+            contact.name.toLowerCase().includes(searchedName.toLowerCase())
+          );
+        },
+      },
 
   
     methods: {
@@ -222,17 +234,12 @@
           
       },
 
-      stop() {
-        clearInterval(this.interval); 
-      },
-
-      
-
-
     },
     
  
 
 
-
   }).mount('#app')
+
+
+//   milestone 4--> 1. creo un data per acquisire la stringa inserita dall'utente, 2. collego il v-model dell'input; 3. uso un filter per ottenere gli utenti che all'interno una funzione che paragona le tue stringhe
