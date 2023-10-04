@@ -82,7 +82,7 @@
               ],
           },
           {
-              name: 'Alessandro B.',
+              name: 'AlessandroB.',
               avatar: 'assets/img/avatar_4.jpg',
               visible: true,
               messages: [
@@ -99,7 +99,7 @@
               ],
           },
           {
-              name: 'Alessandro L.',
+              name: 'AlessandroL.',
               avatar: 'assets/img/avatar_5.jpg',
               visible: true,
               messages: [
@@ -182,22 +182,9 @@
       }
 
     },
-  
 
-    computed: {
 
-        
-        search() {
-            this.contacts.forEach(contact => {
-                contact.visible = contact.name.toLowerCase().includes(this.searchContact.toLowerCase())
-            });
-
-            console.log(this.contacts.visible);
-
-            return this.contacts.visible
-        }
-
-    },
+    
 
   
     methods: {
@@ -237,13 +224,24 @@
           
       },
 
-    
+
   
 
 
     },
-    
- 
+
+    computed: {
+
+            search() {
+              this.contacts.forEach(contact => {
+                contact.visible = contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
+              });
+          
+              return this.contacts.filter(contact => contact.visible);
+            }
+          }
+          
+          
 
 
   }).mount('#app')
