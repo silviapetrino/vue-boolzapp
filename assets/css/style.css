@@ -164,9 +164,9 @@ aside .top .notifications button.icon {
   section.text .msg-sent,
   section.text .msg-received {
     border-radius: 5px;
-    width: 60%;
+    width: 50%;
     padding: 8px;
-    margin: 10px 0;
+    margin: 10px 40px;
   }
 
   .msg-sent {

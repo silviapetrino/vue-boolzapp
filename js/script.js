@@ -201,9 +201,10 @@
           message: this.newMessage,
           status: 'sent'
         });
+        // remove text 
         this.newMessage = " "; 
   
-        this.interval = setInterval( () => {
+        this.interval = setTimeout( () => {
             this.automaticAnswer()
         }, 1000)
 
