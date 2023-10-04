@@ -184,16 +184,19 @@
     },
 
     computed: {
+        
         filteredContacts() {
           if (!this.searchContact) {
             return this.contacts;
           } else {
             const searchedName = this.searchContact.toLowerCase();
             return this.contacts.filter(contact =>
-              contact.name.toLowerCase().includes(searchedName.toLowerCase())
+              contact.name.toLowerCase().includes(searchedName.toLowerCase()),
+              console.log(this.searchContact)
             );
+            
           }
-        },
+        }
       },
 
   
