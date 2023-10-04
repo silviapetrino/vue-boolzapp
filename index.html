@@ -116,12 +116,18 @@
 
 <div class="overflow-scroll center d-flex flex-column m-size">
 
-  <div  v-for="(msgs, index) in contacts[currentContact].messages" :class="(msgs.status === 'sent') ? 'msg-sent align-self-end' : 'msg-received align-self-start'" class="d-flex flex-column ">
+  <div  v-for="(msgs, index) in contacts[currentContact].messages" :class="(msgs.status === 'sent') ? 'msg-sent align-self-end' : 'msg-received align-self-start'" class="d-flex flex-column" :key="index">
+    <select  aria-label="Small select example">
+      <option selected></option>
+      <option value="1">Message info</option>
+      <option @click="deleteMessage(index)" value="2">Delete Message</option>
+    </select>
+    
 
     <div class="text">{{ msgs.message }}</div>
-
     <span class="time d-inline-block sm-size align-self-end">{{msgs.date}}</span>
   </div>
+
   <div v-show v-if="sendMessage" class="align-self-end">{{newMessage}}</div>
   <div v-else="automaticAnswer" class="msg-received align-self-start">{{answer}}</div>
   

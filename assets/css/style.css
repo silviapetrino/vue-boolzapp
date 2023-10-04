@@ -59,14 +59,13 @@ li.active {
 /* main sizes  */
 .container_sp {
   width: 75%;
-  margin: 20px auto;
+  margin: 30px auto;
   height: 100vh;
 }
 
 aside {
   width: 40%;
   min-width: 250px;
-  height: 100%;
 }
 
 aside .top {
@@ -82,7 +81,6 @@ aside .bottom {
 
 section.text  {
   width: 60%;
-  height: 100%;
   background-image: url(../img/mine.jpg);
 }
 
@@ -167,6 +165,7 @@ aside .top .notifications button.icon {
     width: 50%;
     padding: 8px;
     margin: 10px 40px;
+    position: relative;
   }
 
   .msg-sent {
@@ -175,4 +174,12 @@ aside .top .notifications button.icon {
 
   .msg-received {
     background-color: var(--white);
+  }
+
+  section.text select {
+    position: absolute;
+    top: 5px;
+    left: 63%;
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0.0001);
   }

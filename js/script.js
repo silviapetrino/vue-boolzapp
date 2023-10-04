@@ -241,15 +241,21 @@
 
         getLastDate(contact) {
             return contact.messages.at(-1).date
+        },
+
+
+        // to delete a message 
+        
+        deleteMessage(index) {
+            this.contacts[this.currentContact].messages.splice(index, 1)
         }
-    
+
+       
+        
  
     },
 
    
-
-          
-          
 
 
   }).mount('#app')
