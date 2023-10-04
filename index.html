@@ -74,11 +74,11 @@
 
           <div class="name-mess d-flex flex-column justify-content-center ps-1">
             <span class="name m-size">{{contacts[index].name}}</span>
-            <span class="last-msg sm-size i-color">{{contacts[index].messages[1].message}}</span>
+            <span class="last-msg sm-size i-color">{{ getLastMessage(contact) }}</span>
           </div>
         </div>
         
-        <span class="sm-size">12:00</span>
+        <span class="sm-size">{{ getLastDate(contact) }}</span>
 
       </li>
 

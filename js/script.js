@@ -185,7 +185,6 @@
 
 
     
-
   
     methods: {
 
@@ -224,18 +223,30 @@
           
       },
 
+    //   With this method, we set the visibility of the contact based on a condition that contains the word digitated by the user
+
       search() {
         this.contacts.forEach(contact => {
           contact.visible = contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
         });
     
-        return this.contacts.filter(contact => contact.visible);
-      }
+            return this.contacts.filter(contact => contact.visible);
+        },
 
+        //  to get last text and date of a message 
 
+        getLastMessage(contact) {
+            return contact.messages.at(-1).message
+        },
 
+        getLastDate(contact) {
+            return contact.messages.at(-1).date
+        }
+    
+ 
     },
 
+   
 
           
           
