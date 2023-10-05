@@ -13,6 +13,8 @@
 </head>
 <body>
 
+     <!-- *********VUE APP********  -->
+     
 <main id="app" class="container_sp d-flex ">
 
 
@@ -90,6 +92,8 @@
 
    <!-- /aside  -->
 
+   <!-- right side - section with text -->
+
 
 <section class="text d-flex flex-column justify-content-between ">
 
@@ -114,7 +118,7 @@
 
   </div>
 
-<div class="overflow-scroll center d-flex flex-column m-size">
+<div class="center d-flex flex-column m-size overflow-scroll">
 
   <div  v-for="(msgs, index) in contacts[currentContact].messages" :class="(msgs.status === 'sent') ? 'msg-sent align-self-end' : 'msg-received align-self-start'" class="d-flex flex-column" :key="index">
     <select  aria-label="Small select example">
@@ -138,6 +142,7 @@
  
 
 
+
   <div class="bottom d-flex py-2">
     <button class="i-color border-0 px-4">
       <i class="fa-regular fa-face-smile"></i>
@@ -151,8 +156,10 @@
 
 </section>
 
+<!-- //right side - section with text -->
 </main>
 
+   <!-- /*********VUE APP********  -->
 
 <script src="./js/script.js"></script>
 </body>
