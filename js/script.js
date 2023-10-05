@@ -223,7 +223,7 @@
           
       },
 
-    //   With this method, we set the visibility of the contact based on a condition that contains the word digitated by the user
+    //   Set the visibility of contacts based on the search string.
 
       search() {
         this.contacts.forEach(contact => {
